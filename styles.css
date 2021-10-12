@@ -1,0 +1,80 @@
+body{
+    background-color: #9EE1E9;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-family: monaco;
+    font-size: 35px;
+    font-style: oblique;
+    text-shadow: 2px 2px 4px #000000;;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#gridContainer{
+    display: grid;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border: 5px solid #3399ff;
+    border-radius: 10px;
+}
+
+#gridBox{
+    border: 0.1px solid white;
+}
+
+#buttons{
+    display: flex;
+    gap: 10px;
+}
+
+button{
+    font-family: monaco;
+    font-size: 25px;
+    background-color: #E99EC3;
+    text-shadow: 2px 2px 4px #000000;
+    color: white;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+
+button:hover{
+    color: cadetblue;
+    transform: scale(1.1);
+}
+
+#sliderValueDisplay{
+    color: white;
+    font-size: 20px;
+    font-family: monaco;
+    text-shadow: 2px 2px 4px #000000;;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 20px;
+	height: 20px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+  
+/*input[type='range']::-webkit-slider-runnable-track {
+    border: 0.5px solid white;
+    background: black;
+}*/
