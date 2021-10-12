@@ -1,3 +1,4 @@
+let i = 0;
 /* creating the grid boxes */ 
 const gridContainer = document.querySelector('#gridContainer');
 const contain = document.querySelector('#buttons');
@@ -17,6 +18,7 @@ const colorSelector = document.querySelector('#colorSelector');
 const colorBtn = document.querySelector('#colorBtn');
 
 colorBtn.addEventListener('click', () => {
+    i = 1;
     const boxes = gridContainer.querySelectorAll('div');
     boxes.forEach(grid => grid.addEventListener('mouseover', () => {
         grid.style.background = colorSelector.value;
@@ -27,6 +29,7 @@ colorBtn.addEventListener('click', () => {
 const rainbowBtn = document.querySelector('#rainbowBtn');
 
 rainbowBtn.addEventListener('click', () => {
+    i = 2;
 const boxes = gridContainer.querySelectorAll('div');        
     boxes.forEach(grid => grid.addEventListener('mouseover', () => {
         const randomR = Math.floor(Math.random() * 256);
@@ -46,12 +49,18 @@ eraserBtn.addEventListener('click', () => {
     }));
 });
 
-/* selecting the reset button */
-const resetBtn = document.querySelector('#resetBtn');
+/* selecting the clear button */
+const resetBtn = document.querySelector('#clearBtn');
 
 resetBtn.addEventListener('click', () => {
     const boxes = gridContainer.querySelectorAll('div');
     boxes.forEach(grid => grid.style.background = "white");
+    if(i == 1){
+        defaultColor();
+    }
+    if(i == 2){
+        rainbowColor();
+    }
     /* code for resetting the grid to default values
     //boxes.forEach(grid => grid.remove());
     //colorSelector.value = "black";
@@ -72,7 +81,12 @@ resizeSlider.addEventListener('change', () => {
     const boxes = gridContainer.querySelectorAll('div');
     boxes.forEach(grid => grid.remove());
     gridDisplay(sliderValue);
-    defaultColor();
+    if(i == 1){
+        defaultColor();
+    }
+    if(i == 2){
+        rainbowColor();
+    }
 });
 
 resizeSlider.addEventListener('input', () => {
@@ -89,6 +103,17 @@ function defaultColor(){
     const boxes = gridContainer.querySelectorAll('div');
         boxes.forEach(grid => grid.addEventListener('mouseover', () => {
             grid.style.background = colorSelector.value;
+    }));
+}
+
+/* rainbow color to be selected */
+function rainbowColor(){
+    const boxes = gridContainer.querySelectorAll('div');        
+    boxes.forEach(grid => grid.addEventListener('mouseover', () => {
+        const randomR = Math.floor(Math.random() * 256);
+        const randomG = Math.floor(Math.random() * 256);
+        const randomB = Math.floor(Math.random() * 256);
+        grid.style.background = `rgb(${randomR}, ${randomB}, ${randomG})`;
     }));
 }
 
