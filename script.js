@@ -81,7 +81,7 @@ resizeSlider.addEventListener('change', () => {
     const boxes = gridContainer.querySelectorAll('div');
     boxes.forEach(grid => grid.remove());
     gridDisplay(sliderValue);
-    if(i == 1){
+    if(i == 1 || i == 0){
         defaultColor();
     }
     if(i == 2){
