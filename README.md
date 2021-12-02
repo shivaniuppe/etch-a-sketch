@@ -1,3 +1,3 @@
 # etch-a-sketch
 
-live preview - https://github.com/shivaniuppe/etch-a-sketch.git
+live preview - https://shivaniuppe.github.io/etch-a-sketch/
